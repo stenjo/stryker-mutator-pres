@@ -1,4 +1,19 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# Using Stryker Mutator
+
+## In small and large projects
+
+- Automated testing and its importance
+- How do we know the quality of our software?
+- Pros and cons on test coverage
+- What is [Stryker Mutator](https://stryker-mutator.io/)? 
+- Why use Stryker Mutator?
+- How to use Stryker Mutator
+  - Locally
+  - GitHub workflows
+- Experiences
+  - Small projects
+  - Large projects
+  - Effect on team focus and product quality
 
 To start the slide show:
 
