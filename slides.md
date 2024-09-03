@@ -39,17 +39,63 @@ background: -
 
 A tech geek spending his work and spare time figuring out stuff on electronics and software
 
-- **Bouvet** - Since 2018, currently team-lead and developer
+- **Bouvet** - Since 2008, currently team-lead and (full-stack)developer
 - **Experience** - Graduated 1991 - B.Eng Microelectronic computer systems. Programming since my first real job - never looked back.
 - **Roles** - Programmer, project manager, program manager, department head, entrepreneur, agile coach and relationship counsellor
-- **Trainer** - DevOps certification courses
+- **Trainer** - DevOps certification courses, Agile, Scrum
 - **Busy with** - Quality of software and trying to create high performing teams
 
 <br>
 
 <br>
 
+<!--
+Here is another comment.
+-->
 
+---
+transition: slide-up
+level: 2
+---
+
+# Testing software
+
+How do we know our stuff works?
+Automated tests
+
+- importance
+- benefits
+- metrics - test coverage
+- Component/Unit tests
+- Regression tests
+- User Acceptance tests
+- End-to-end test
+
+---
+layout: two-cols
+layoutClass: gap-16
+---
+
+# Test quality
+
+How do we know our tests are good?
+
+
+
+---
+
+# Implementing in project/product development
+
+- Using locally 
+- In pull-requests
+- For review
+- As a quality check
+
+---
+
+
+
+---
 <!--
 You can have `style` tag in markdown to override the style for the current page.
 Learn more: https://sli.dev/features/slide-scope-style
@@ -66,40 +112,6 @@ h1 {
   -moz-text-fill-color: transparent;
 }
 </style>
-
-<!--
-Here is another comment.
--->
-
----
-
-transition: slide-up
-level: 2
----
-
-# Testing software
-
-How do we know our stuff works?
-Automated tests
-
-- importance
-- benefits
-- metrics - test coverage
-
----
-layout: two-cols
-
-layoutClass: gap-16
-
----
-
-# Test quality
-
-How do we know our tests are good?
-
-Metrics?
-
----
 
 # Table of contents
 
