@@ -15,6 +15,8 @@
   - Large projects
   - Effect on team focus and product quality
 
+
+Inspired by [](https://fosdem.org/2024/schedule/event/fosdem-2024-1683-who-s-testing-the-tests-mutation-testing-with-strykerjs/)
 To start the slide show:
 
 - `npm install`

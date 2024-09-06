@@ -113,6 +113,47 @@ h1 {
 }
 </style>
 
+<!--
+Here is another comment.
+-->
+
+---
+transition: slide-up
+level: 2
+
+---
+
+# Testing software
+
+How do we know our stuff works?
+Automated tests
+
+- importance
+- benefits
+- metrics - test coverage
+
+---
+
+# Example - devops-metrics-action
+
+
+
+
+---
+layout: two-cols
+
+layoutClass: gap-16
+
+---
+
+# Test quality
+
+How do we know our tests are good?
+
+Metrics?
+
+---
+
 # Table of contents
 
 
