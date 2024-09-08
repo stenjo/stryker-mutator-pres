@@ -133,10 +133,213 @@ Automated tests
 - metrics - test coverage
 
 ---
+layout: image-right
+image: DORA-action.png
+backgroundSize: contain
+---
 
-# Example - devops-metrics-action
+# devops-metrics-action
+
+<v-clicks>
+
+A gihub action that calculates DORA key metrics based
+on Issues, PR's and releaseses in one or more github
+repositories.
+
+- implemented in typescript<br/>
+- used by our main development project<br/>
+- created in my spare time<br/>
+- 100% test coverage<br/>
+
+</v-clicks>
 
 
+---
+layout: image-right
+image: LeadTimeTest.png
+---
+
+# LeadTime.test.ts
+
+The tests for the LeadTime.ts.
+
+<v-clicks>
+
+- Provides 100% test coverage<br/>
+- more than 740 lines of code<br/>
+- (probably too big)<br/>
+
+</v-clicks>
+
+
+
+---
+
+# LeadTime.ts
+
+<v-click>
+
+````md magic-move {lines: true}
+```ts {*|6-10}
+// code
+  getLog(): string[] {
+    return this.log
+  }
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 || this.releases.length === 0) {
+      return 0
+    }
+
+    if (filtered) {
+      this.log.push(`\nLog is filtered - only feat and fix.`)
+    }
+```
+
+```ts {6}
+// bug 1
+  getLog(): string[] {
+    return this.log
+  }
+  async getLeadTime(filtered = false): Promise<number> {
+    if (false) {
+      return 0
+    }
+
+    if (filtered) {
+      this.log.push(`\nLog is filtered - only feat and fix.`)
+    }
+```
+
+```ts {6}
+// bug 2
+  getLog(): string[] {
+    return this.log
+  }
+  async getLeadTime(filtered = false): Promise<number> {
+    if (false || this.releases.length === 0) {
+      return 0
+    }
+
+    if (filtered) {
+      this.log.push(`\nLog is filtered - only feat and fix.`)
+    }
+```
+
+```ts {6}
+// bug 3
+  getLog(): string[] {
+    return this.log
+  }
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 && this.releases.length === 0) {
+      return 0
+    }
+
+    if (filtered) {
+      this.log.push(`\nLog is filtered - only feat and fix.`)
+    }
+```
+
+```ts {6}
+// bug 4
+  getLog(): string[] {
+    return this.log
+  }
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 || false) {
+      return 0
+    }
+
+    if (filtered) {
+      this.log.push(`\nLog is filtered - only feat and fix.`)
+    }
+```
+
+```ts {6}
+// bug 5
+  getLog(): string[] {
+    return this.log
+  }
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 || this.releases.length === 0) {}
+
+    if (filtered) {
+      this.log.push(`\nLog is filtered - only feat and fix.`)
+    }
+```
+
+```ts {10}
+// bug 6
+  getLog(): string[] {
+    return this.log
+  }
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 || this.releases.length === 0) {
+      return 0
+    }
+
+    if (true) {
+      this.log.push(`\nLog is filtered - only feat and fix.`)
+    }
+```
+
+```ts {10}
+// bug 7
+  getLog(): string[] {
+    return this.log
+  }
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 || this.releases.length === 0) {
+      return 0
+    }
+
+    if (false) {
+      this.log.push(`\nLog is filtered - only feat and fix.`)
+    }
+```
+
+```ts {10}
+// bug 8
+  getLog(): string[] {
+    return this.log
+  }
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 || this.releases.length === 0) {
+      return 0
+    }
+
+    if (filtered) {}
+```
+
+```ts {*}
+// bug 8
+  getLog(): string[] {
+    return this.log
+  }
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 || this.releases.length === 0) {
+      return 0
+    }
+
+    if (filtered) {
+      this.log.push(`\nLog is filtered - only feat and fix.`)
+    }
+```
+
+````
+</v-click>
+
+<v-click>
+
+- 8 possible bugs in 6 lines of code
+
+</v-click>
+
+<v-click>
+
+*Full test coverge does _not_ ensure high code quality*
+
+</v-click>
 
 
 ---
@@ -612,7 +815,7 @@ Double-click on the draggable elements to edit their positions.
 </v-drag>
 ```
 
-<v-drag pos="663,206,261,_,-15">
+<v-drag pos="663,206,261,_,-15"undefined>
   <div text-center text-3xl border border-main rounded>
     Double-click me!
   </div>
