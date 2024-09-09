@@ -19,6 +19,7 @@ drawings:
 transition: slide-left
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
+lineNumbers: true
 
 ---
 
@@ -54,6 +55,162 @@ Here is another comment.
 -->
 
 ---
+layout: image-right
+image: images/tdd-img.png
+backgroundSize: contain
+---
+
+# TDD
+
+Some benefits from TDD:
+<v-clicks>
+- Trustworthy code<br/>
+- Better architecture<br/>
+- Tests are the documentation<br/>
+- Easy when debugging <br/>
+and as an extra benefit: <br/>
+- Enables high test coverage <br/>
+
+</v-clicks>
+```
+|------------------------|---------|----------|---------|---------|-------------------|
+|File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
+|------------------------|---------|----------|---------|---------|-------------------|
+|All files               |     100 |      100 |     100 |     100 |                   |
+| ChangeFailureRate.ts   |     100 |      100 |     100 |     100 |                   |
+| CommitsAdapter.ts      |     100 |      100 |     100 |     100 |                   |
+| DeployFrequency.ts     |     100 |      100 |     100 |     100 |                   |
+| IssuesAdapter.ts       |     100 |      100 |     100 |     100 |                   |
+| LeadTime.ts            |     100 |      100 |     100 |     100 |                   |
+| MeanTimeToRestore.ts   |     100 |      100 |     100 |     100 |                   |
+| PullRequestsAdapter.ts |     100 |      100 |     100 |     100 |                   |
+| ReleaseAdapter.ts      |     100 |      100 |     100 |     100 |                   |
+| index.ts               |     100 |      100 |     100 |     100 |                   |
+|------------------------|---------|----------|---------|---------|-------------------|
+Test Suites: 13 passed, 13 total
+Tests:       93 passed, 93 total
+Snapshots:   0 total
+Time:        6.607 s
+Ran all test suites.
+```
+
+---
+
+# What could go wrong?
+    
+    line 3: Covered by 18 tests<br/>
+    line 4: Covered by 6 tests<br/>
+     
+````md magic-move {lines: true}
+```ts {*|3|*}
+// code
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 || this.releases.length === 0) {
+      return 0
+    }
+```
+
+```ts {*|3|*}
+// bug 1
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 && this.releases.length === 0) {
+      return 0
+    }
+```
+
+```ts {*|3|*}
+// bug 2
+  async getLeadTime(filtered = false): Promise<number> {
+    if (false || this.releases.length === 0) {
+      return 0
+    }
+```
+
+```ts {*|3|*}
+// bug 3
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 || true === 0) {
+      return 0
+    }
+```
+
+```ts {*|3|*}
+// bug 4
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 || this.releases.length === 0) {}
+```
+
+````
+
+---
+
+
+````md magic-move {lines: true}
+```ts {*|2|*}
+// step 1
+const author = reactive({
+  name: 'John Doe',
+  books: [
+    'Vue 2 - Advanced Guide',
+    'Vue 3 - Basic Guide',
+    'Vue 4 - The Mystery'
+  ]
+})
+```
+
+```ts {*|1-2|3-4|3-4,8}
+// step 2
+export default {
+  data() {
+    return {
+      author: {
+        name: 'John Doe',
+        books: [
+          'Vue 2 - Advanced Guide',
+          'Vue 3 - Basic Guide',
+          'Vue 4 - The Mystery'
+        ]
+      }
+    }
+  }
+}
+```
+
+```ts
+// step 3
+export default {
+  data: () => ({
+    author: {
+      name: 'John Doe',
+      books: [
+        'Vue 2 - Advanced Guide',
+        'Vue 3 - Basic Guide',
+        'Vue 4 - The Mystery'
+      ]
+    }
+  })
+}
+```
+
+Non-code blocks are ignored.
+
+```vue
+<!-- step 4 -->
+<script setup>
+const author = {
+  name: 'John Doe',
+  books: [
+    'Vue 2 - Advanced Guide',
+    'Vue 3 - Basic Guide',
+    'Vue 4 - The Mystery'
+  ]
+}
+</script>
+```
+````
+
+
+---
 transition: slide-up
 level: 2
 ---
@@ -72,8 +229,6 @@ Automated tests
 - End-to-end test
 
 ---
-layout: two-cols
-layoutClass: gap-16
 ---
 
 # Test quality
@@ -804,10 +959,14 @@ database "MySql" {
 Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
 
 ---
+dragPos:
+  square: 0,-432,0,0
+---
 
 foo: bar
 dragPos:
   square: 691,32,167,_,-16
+
 ---
 dragPos:
   square: 0,-562,0,0
