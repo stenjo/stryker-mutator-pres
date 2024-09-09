@@ -140,36 +140,54 @@ backgroundSize: contain
 
 # devops-metrics-action
 
-<v-clicks>
+<v-click>
 
 A gihub action that calculates DORA key metrics based
 on Issues, PR's and releaseses in one or more github
 repositories.
 
+</v-click>
+
+<v-clicks>
+
 - implemented in typescript<br/>
-- used by our main development project<br/>
-- created in my spare time<br/>
 - 100% test coverage<br/>
 
 </v-clicks>
 
+<v-after>
+
+![test coverage](./test-coverage.png)
+
+</v-after>
 
 ---
 layout: image-right
 image: LeadTimeTest.png
 ---
 
-# LeadTime.test.ts
+# LeadTime
 
-The tests for the LeadTime.ts.
+Lets consider the LeadTime module,
+having a automated component tests
+in `LeadTime.test.ts` test suite.
 
 <v-clicks>
 
-- Provides 100% test coverage<br/>
 - more than 740 lines of code<br/>
 - (probably too big)<br/>
+- 19 tests<br/>
+- Provides 100% test coverage<br/>
+![LeadTime test log](./LeadTime-test-log.png)
 
 </v-clicks>
+
+<v-click>
+
+How do we know these tests are good?<br/>
+(And by good we mean: able to detect bugs we introduce)
+
+</v-click>
 
 
 
@@ -177,10 +195,13 @@ The tests for the LeadTime.ts.
 
 # LeadTime.ts
 
+Lets test our tests to see how waterthight our testing is by considering a few lines of code in the LeadTime module:<br/>
+How many bugs can we introduce and still have all tests passing?
+
 <v-click>
 
 ````md magic-move {lines: true}
-```ts {*|6-10}
+```ts {*|6-10}{lines:true,startLine:2}
 // code
   getLog(): string[] {
     return this.log
@@ -337,7 +358,7 @@ The tests for the LeadTime.ts.
 
 <v-click>
 
-*Full test coverge does _not_ ensure high code quality*
+> ## Full test coverage does **not** ensure high code quality
 
 </v-click>
 
