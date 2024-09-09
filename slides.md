@@ -289,7 +289,7 @@ Automated tests
 
 ---
 layout: image-right
-image: DORA-action.png
+image: ./images/DORA-action.png
 backgroundSize: contain
 ---
 
@@ -312,13 +312,13 @@ repositories.
 
 <v-after>
 
-![test coverage](./test-coverage.png)
+![test coverage](./images/test-coverage.png)
 
 </v-after>
 
 ---
 layout: image-right
-image: LeadTimeTest.png
+image: ./images/LeadTimeTest.png
 ---
 
 # LeadTime
@@ -333,7 +333,7 @@ in `LeadTime.test.ts` test suite.
 - (probably too big)<br/>
 - 19 tests<br/>
 - Provides 100% test coverage<br/>
-![LeadTime test log](./LeadTime-test-log.png)
+![LeadTime test log](./images/LeadTime-test-log.png)
 
 </v-clicks>
 
@@ -351,7 +351,7 @@ How do we know these tests are good?<br/>
 # LeadTime.ts
 
 Lets test our tests to see how waterthight our testing is by considering a few lines of code in the LeadTime module:<br/>
-How many bugs can we introduce and still have all tests passing?
+> How many bugs can we introduce and still have all tests passing?
 
 <v-click>
 
@@ -519,17 +519,108 @@ How many bugs can we introduce and still have all tests passing?
 
 
 ---
-layout: two-cols
-
-layoutClass: gap-16
-
----
 
 # Test quality
 
-How do we know our tests are good?
+In the previous example, there were also 4 bugs that caused a test to fail:<br/>
 
-Metrics?
+<br/>
+
+$$
+\begin{aligned}
+\frac{4 \cdot detected}{4 \cdot detected + 8 \cdot undetected} &= \frac{4}{12} &= 0,33 &= 33\%
+\end{aligned}
+$$
+
+<br/>
+
+<v-clicks>
+
+This little exercise tells us that:
+
+- Tests are not good enough
+- Tests are not useless
+- We can improve the test quality
+
+</v-clicks>
+
+---
+layout: image-right
+image: ./images/test-code.png
+---
+
+# But Why?
+
+<v-click>
+Doing this exercise enables us to:
+</v-click>
+
+<v-clicks>
+
+- Find functionality we have not tested
+- Detect useless code
+- Get  hints to write better tests
+- Make our code more robust
+
+</v-clicks>
+
+<br/>
+
+<v-click>
+In this particular case I can add tests to verify edge cases the code is meant to catch, or I could delete some of the code if it turns out it's useless.<br/><br/>
+</v-click>
+
+<v-click>
+BTW: The overall score for the LeadTime module tests is 67%. <br/><br/>
+How do I know?
+</v-click>
+
+---
+layout: image-left
+image: ./images/stryker-man.png
+---
+
+# Stryker
+
+Stryker is an automated way if testing your tests through altering your code by inserting bugs (mutants) and then running your tests to verify that the tests are catching the bugs or not.
+
+<v-clicks>
+
+- available for:
+  - Javascript/Typescript
+  - C#
+  - Scala
+- Produces kill-score for your tests
+- All in a handy report
+
+</v-clicks>
+
+<v-after>
+
+![Stryker results](./images/stryker-scores.png)
+
+</v-after>
+
+---
+
+# How Stryker Works
+
+<v-clicks>
+
+- Filters the files to be mutated
+- Determines what mutations to insert
+- Performs a dry-run of all tests to verify all is passing
+- Makes a copy of your code, applies one mutation and runs all tests
+- Counts the status of the tests for each mutation
+- Creates a report based on all mutations
+
+</v-clicks>
+
+---
+layout: iframe
+url: mutation.html
+---
+# Stryker report
 
 ---
 
