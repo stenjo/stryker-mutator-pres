@@ -3,7 +3,7 @@
 theme: seriph
 # random image from a curated Unsplash collection by Anthony
 # like them? see https://unsplash.com/collections/94734566/slidev
-background: https://stryker-mutator.io/images/stryker-man.svg
+background: https://cover.sli.dev
 # some information about your slides (markdown enabled)
 title: Using Stryker mutator
 info: |
@@ -20,7 +20,6 @@ transition: slide-left
 # enable MDC Syntax: https://sli.dev/features/mdc
 mdc: true
 lineNumbers: true
-
 ---
 
 # Using Stryker Mutator
@@ -53,239 +52,6 @@ A tech geek spending his work and spare time figuring out stuff on electronics a
 <!--
 Here is another comment.
 -->
-
----
-layout: image-right
-image: images/tdd-img.png
-backgroundSize: contain
----
-
-# TDD
-
-Some benefits from TDD:
-<v-clicks>
-- Trustworthy code<br/>
-- Better architecture<br/>
-- Tests are the documentation<br/>
-- Easy when debugging <br/>
-and as an extra benefit: <br/>
-- Enables high test coverage <br/>
-
-</v-clicks>
-```
-|------------------------|---------|----------|---------|---------|-------------------|
-|File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
-|------------------------|---------|----------|---------|---------|-------------------|
-|All files               |     100 |      100 |     100 |     100 |                   |
-| ChangeFailureRate.ts   |     100 |      100 |     100 |     100 |                   |
-| CommitsAdapter.ts      |     100 |      100 |     100 |     100 |                   |
-| DeployFrequency.ts     |     100 |      100 |     100 |     100 |                   |
-| IssuesAdapter.ts       |     100 |      100 |     100 |     100 |                   |
-| LeadTime.ts            |     100 |      100 |     100 |     100 |                   |
-| MeanTimeToRestore.ts   |     100 |      100 |     100 |     100 |                   |
-| PullRequestsAdapter.ts |     100 |      100 |     100 |     100 |                   |
-| ReleaseAdapter.ts      |     100 |      100 |     100 |     100 |                   |
-| index.ts               |     100 |      100 |     100 |     100 |                   |
-|------------------------|---------|----------|---------|---------|-------------------|
-Test Suites: 13 passed, 13 total
-Tests:       93 passed, 93 total
-Snapshots:   0 total
-Time:        6.607 s
-Ran all test suites.
-```
-
----
-
-# What could go wrong?
-    
-    line 3: Covered by 18 tests<br/>
-    line 4: Covered by 6 tests<br/>
-     
-````md magic-move {lines: true}
-```ts {*|3|*}
-// code
-  async getLeadTime(filtered = false): Promise<number> {
-    if (this.pulls.length === 0 || this.releases.length === 0) {
-      return 0
-    }
-```
-
-```ts {*|3|*}
-// bug 1
-  async getLeadTime(filtered = false): Promise<number> {
-    if (this.pulls.length === 0 && this.releases.length === 0) {
-      return 0
-    }
-```
-
-```ts {*|3|*}
-// bug 2
-  async getLeadTime(filtered = false): Promise<number> {
-    if (false || this.releases.length === 0) {
-      return 0
-    }
-```
-
-```ts {*|3|*}
-// bug 3
-  async getLeadTime(filtered = false): Promise<number> {
-    if (this.pulls.length === 0 || true === 0) {
-      return 0
-    }
-```
-
-```ts {*|3|*}
-// bug 4
-  async getLeadTime(filtered = false): Promise<number> {
-    if (this.pulls.length === 0 || this.releases.length === 0) {}
-```
-
-````
-
----
-
-
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
-
-
----
-transition: slide-up
-level: 2
----
-
-# Testing software
-
-How do we know our stuff works?
-Automated tests
-
-- importance
-- benefits
-- metrics - test coverage
-- Component/Unit tests
-- Regression tests
-- User Acceptance tests
-- End-to-end test
-
----
----
-
-# Test quality
-
-How do we know our tests are good?
-
-
-
----
-
-# Implementing in project/product development
-
-- Using locally 
-- In pull-requests
-- For review
-- As a quality check
-
----
-
-
-
----
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
--->
-
----
-transition: slide-up
-level: 2
-
----
-
-# Testing software
-
-How do we know our stuff works?
-Automated tests
-
-- importance
-- benefits
-- metrics - test coverage
 
 ---
 layout: image-right
@@ -534,13 +300,14 @@ $$
 
 <br/>
 
-<v-clicks>
+<v-clicks depth="2">
 
-This little exercise tells us that:
+A few takeaways:
 
 - Tests are not good enough
 - Tests are not useless
 - We can improve the test quality
+- No test coverage = no tests at all
 
 </v-clicks>
 
@@ -567,7 +334,8 @@ Doing this exercise enables us to:
 <br/>
 
 <v-click>
-In this particular case I can add tests to verify edge cases the code is meant to catch, or I could delete some of the code if it turns out it's useless.<br/><br/>
+
+> In this particular case I can add tests to verify edge cases the code is meant to catch, or I could delete some of the code if it turns out it's useless.<br/>
 </v-click>
 
 <v-click>
@@ -580,18 +348,19 @@ layout: image-left
 image: ./images/stryker-man.png
 ---
 
-# Stryker
+# Stryker-mutator
 
 Stryker is an automated way if testing your tests through altering your code by inserting bugs (mutants) and then running your tests to verify that the tests are catching the bugs or not.
 
 <v-clicks>
 
+- open source
+- no licenses
+- does not leak your code externally
 - available for:
-  - Javascript/Typescript
-  - C#
-  - Scala
-- Produces kill-score for your tests
-- All in a handy report
+  JS/TS, C# and Scala
+- produces kill-score for your tests
+- all in a handy report
 
 </v-clicks>
 
@@ -618,81 +387,215 @@ Stryker is an automated way if testing your tests through altering your code by 
 
 ---
 layout: iframe
-url: mutation.html
+url: https://stenjo.github.io/stryker-presentation/mutation.html
 ---
+
 # Stryker report
 
----
-
-# Table of contents
-
-
 
 ---
+layout: two-cols-header
+---
+# Practical use in other projects
 
+Apart from running Stryker from command line, there might also be a benefit from running stryker in a github action. <br/>
+
+::left::
+
+## Nightly
+
+Implemented nightly Stryker test of all code-base,<br/>
+storing the report available to the team.
+
+- Track total score over time
+- Use changes in total score as input to<br/>
+  retrospectives
+
+```yaml
+name: Stryker mutation tests frontend
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 0 * * 1,2,3,4,5"
+      
+jobs:
+...
+```
+
+::right::
+
+## Pull Requests
+
+Run Stryker on changed code as part of the validation<br/>
+checks in pull-requests.
+
+- Make it quick for immediate feedback to developers
+- Discuss within the team if there should be a minimum score
+
+```yaml
+name: Stryker frontend PR diff
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      -'*'
+      -'!main'  
+  pull_request:
+    paths:
+      - 'frontend/src/**/*.tsx'
+      - 'frontend/src/**/*.ts'
+      
+jobs:
+...
+```
+
+---
+
+# Caveats
+
+Stryker, in its nature, runs your test suites for every mutation it decides is relevant. This means that for large codebases a full report takes a long time to complete.
+
+Stryker has ways to reduce time spent:
+
+- Incremental mode: Only run mutations changed
+- Pre-check code for compilation or build errors
+- Option to ignore static mutations
+- Ignores mutations in uncovered code
+- Run stryker on part of the code only (lines changed)
+
+---
+layout: center
+---
+
+# How to get high stryker score?
+
+<v-clicks>
+
+- Adopt a culture of Quality First
+- Arrange for fail-fast and fast feedback
+- Focus on Stryker score in peer-reviews
+- Do TDD!
+
+</v-clicks>
+
+---
 layout: image-right
+image: images/tdd-img.png
+backgroundSize: contain
+---
+
+# TDD
+
+Some other benefits from TDD:
+<v-clicks>
+
+- Trustworthy code
+- Better architecture
+- Tests are the documentation
+- Easy when debugging<br/>
+and as an extra benefit:
+- Fosters high test coverage
+
+</v-clicks>
+
+<v-after>
+
+```
+|------------------------|---------|----------|---------|---------|-------------------|
+|File                    | % Stmts | % Branch | % Funcs | % Lines | Uncovered Line #s |
+|------------------------|---------|----------|---------|---------|-------------------|
+|All files               |     100 |      100 |     100 |     100 |                   |
+| ChangeFailureRate.ts   |     100 |      100 |     100 |     100 |                   |
+| CommitsAdapter.ts      |     100 |      100 |     100 |     100 |                   |
+| DeployFrequency.ts     |     100 |      100 |     100 |     100 |                   |
+| IssuesAdapter.ts       |     100 |      100 |     100 |     100 |                   |
+| LeadTime.ts            |     100 |      100 |     100 |     100 |                   |
+| MeanTimeToRestore.ts   |     100 |      100 |     100 |     100 |                   |
+| PullRequestsAdapter.ts |     100 |      100 |     100 |     100 |                   |
+| ReleaseAdapter.ts      |     100 |      100 |     100 |     100 |                   |
+| index.ts               |     100 |      100 |     100 |     100 |                   |
+|------------------------|---------|----------|---------|---------|-------------------|
+Test Suites: 13 passed, 13 total
+Tests:       93 passed, 93 total
+Snapshots:   0 total
+Time:        6.607 s
+Ran all test suites.
+```
+
+</v-after>
+
+
+---
+layout: end
 image: <https://cover.sli.dev>
 ---
 
-# Code
+# QUESTIONS?
 
-Use code snippets and get the highlighting directly, and even types hover!
+---
 
-```ts {all|5|7|7-8|10|all} twoslash
-// TwoSlash enables TypeScript hover information
-// and errors in markdown code blocks
-// More at https://shiki.style/packages/twoslash
+# References
 
-import { computed, ref } from 'vue'
+- Stryker Mutator (web): `https://stryker-mutator.io/`
+- Test-Driven Development: `https://docs.google.com/presentation/d/1L5yPzxBlDJ5r56OHpUv1BLO4pkxFYT9V1yLUgosThq4/edit?usp=sharing`
+  
 
-const count = ref(0)
-const doubled = computed(() => count.value * 2)
+---
+hide: true
+---
 
-doubled.value = 2
+# What could go wrong?
+    
+    line 3: Covered by 18 tests<br/>
+    line 4: Covered by 6 tests<br/>
+     
+````md magic-move {lines: true}
+```ts {*|3|*}
+// code
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 || this.releases.length === 0) {
+      return 0
+    }
 ```
 
-<arrow v-click="[4, 5]" x1="350" y1="310" x2="195" y2="334" color="#953" width="2" arrowSize="1" />
+```ts {*|3|*}
+// bug 1
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 && this.releases.length === 0) {
+      return 0
+    }
+```
 
-<!-- This allow you to embed external code blocks -->
-<<< @/snippets/external.ts#snippet
+```ts {*|3|*}
+// bug 2
+  async getLeadTime(filtered = false): Promise<number> {
+    if (false || this.releases.length === 0) {
+      return 0
+    }
+```
 
-<!-- Footer -->
+```ts {*|3|*}
+// bug 3
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 || true === 0) {
+      return 0
+    }
+```
 
-[Learn more](https://sli.dev/features/line-highlighting)
+```ts {*|3|*}
+// bug 4
+  async getLeadTime(filtered = false): Promise<number> {
+    if (this.pulls.length === 0 || this.releases.length === 0) {}
+```
 
-<!-- Inline style -->
-<style>
-.footnotes-sep {
-  @apply mt-5 opacity-10;
-}
-.footnotes {
-  @apply text-sm opacity-75;
-}
-.footnote-backref {
-  display: none;
-}
-</style>
-
-<!--
-Notes can also sync with clicks
-
-[click] This will be highlighted after the first click
-
-[click] Highlighted with `count = ref(0)`
-
-[click:3] Last click (skip two clicks)
--->
+````
 
 ---
-
-level: 2
+hide: true
 ---
 
-# Shiki Magic Move
-
-Powered by [shiki-magic-move](https://shiki-magic-move.netlify.app/), Slidev supports animations across multiple code snippets.
-
-Add multiple code blocks and wrap them with <code>````md magic-move</code> (four backticks) to enable the magic move. For example:
 
 ````md magic-move {lines: true}
 ```ts {*|2|*}
@@ -758,391 +661,89 @@ const author = {
 ```
 ````
 
+
+---
+transition: slide-up
+level: 2
+hide: true
 ---
 
-# Components
+# Testing software
 
-<div grid="~ cols-2 gap-4">
-<div>
+How do we know our stuff works?
+Automated tests
 
-You can use Vue components directly inside your slides.
+- importance
+- benefits
+- metrics - test coverage
+- Component/Unit tests
+- Regression tests
+- User Acceptance tests
+- End-to-end test
 
-We have provided a few built-in components like `<Tweet/>` and `<Youtube/>` that you can use directly. And adding your custom components is also super easy.
+---
+hide: true
+---
 
-```html
-<Counter :count="10" />
-```
+# Test quality
 
-<!-- ./components/Counter.vue -->
-<Counter :count="10" m="t-4" />
+How do we know our tests are good?
 
-Check out [the guides](https://sli.dev/builtin/components.html) for more.
 
-</div>
-<div>
 
-```html
-<Tweet id="1390115482657726468" />
-```
+---
+hide: true
+---
 
-<Tweet id="1390115482657726468" scale="0.65" />
+# Implementing in project/product development
 
-</div>
-</div>
+- Using locally 
+- In pull-requests
+- For review
+- As a quality check
+
+
+
+---
+hide: true
+---
 
 <!--
-Presenter note with **bold**, *italic*, and ~~striked~~ text.
+You can have `style` tag in markdown to override the style for the current page.
+Learn more: https://sli.dev/features/slide-scope-style
+-->
 
-Also, HTML elements are valid:
-<div class="flex w-full">
-  <span style="flex-grow: 1;">Left content</span>
-  <span>Right content</span>
-</div>
+<style>
+h1 {
+  background-color: #2B90B6;
+  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+</style>
+
+<!--
+Here is another comment.
 -->
 
 ---
-
-class: px-20
+transition: slide-up
+level: 2
+hide: true
 ---
 
-# Themes
-
-Slidev comes with powerful theming support. Themes can provide styles, layouts, components, or even configurations for tools. Switching between themes by just **one edit** in your frontmatter:
-
-<div grid="~ cols-2 gap-2" m="t-2">
-
-```yaml
 ---
-theme: default
----
-```
-
-```yaml
----
-theme: seriph
----
-```
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-default/01.png?raw=true" alt="">
-
-<img border="rounded" src="https://github.com/slidevjs/themes/blob/main/screenshots/theme-seriph/01.png?raw=true" alt="">
-
-</div>
-
-Read more about [How to use a theme](https://sli.dev/guide/theme-addon#use-theme) and
-check out the [Awesome Themes Gallery](https://sli.dev/resources/theme-gallery).
-
+hide: true
 ---
 
-# Clicks Animations
+# Testing software
 
-You can add `v-click` to elements to add a click animation.
+How do we know our stuff works?
+Automated tests
 
-<div v-click>
-
-This shows up when you click the slide:
-
-```html
-<div v-click>This shows up when you click the slide.</div>
-```
-
-</div>
-
-<br>
-
-<v-click>
-
-The <span v-mark.red="3"><code>v-mark</code> directive</span>
-also allows you to add
-<span v-mark.circle.orange="4">inline marks</span>
-, powered by [Rough Notation](https://roughnotation.com/):
-
-```html
-<span v-mark.underline.orange>inline markers</span>
-```
-
-</v-click>
-
-<div mt-20 v-click>
-
-[Learn more](https://sli.dev/guide/animations#click-animation)
-
-</div>
-
----
-
-# Motions
-
-Motion animations are powered by [@vueuse/motion](https://motion.vueuse.org/), triggered by `v-motion` directive.
-
-```html
-<div
-  v-motion
-  :initial="{ x: -80 }"
-  :enter="{ x: 0 }"
-  :click-3="{ x: 80 }"
-  :leave="{ x: 1000 }"
->
-  Slidev
-</div>
-```
-
-<div class="w-60 relative">
-  <div class="relative w-40 h-40">
-    <img
-      v-motion
-      :initial="{ x: 800, y: -100, scale: 1.5, rotate: -50 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-square.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ y: 500, x: -100, scale: 2 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-circle.png"
-      alt=""
-    />
-    <img
-      v-motion
-      :initial="{ x: 600, y: 400, scale: 2, rotate: 100 }"
-      :enter="final"
-      class="absolute inset-0"
-      src="https://sli.dev/logo-triangle.png"
-      alt=""
-    />
-  </div>
-
-  <div
-    class="text-5xl absolute top-14 left-40 text-[#2B90B6] -z-1"
-    v-motion
-    :initial="{ x: -80, opacity: 0}"
-    :enter="{ x: 0, opacity: 1, transition: { delay: 2000, duration: 1000 } }">
-    Slidev
-  </div>
-</div>
-
-<!-- vue script setup scripts can be directly used in markdown, and will only affects current page -->
-<script setup lang="ts">
-const final = {
-  x: 0,
-  y: 0,
-  rotate: 0,
-  scale: 1,
-  transition: {
-    type: 'spring',
-    damping: 10,
-    stiffness: 20,
-    mass: 2
-  }
-}
-</script>
-
-<div
-  v-motion
-  :initial="{ x:35, y: 30, opacity: 0}"
-  :enter="{ y: 0, opacity: 1, transition: { delay: 3500 } }">
-
-[Learn more](https://sli.dev/guide/animations.html#motion)
-
-</div>
-
----
-
-# LaTeX
-
-LaTeX is supported out-of-box. Powered by [KaTeX](https://katex.org/).
-
-<div h-3 />
-
-Inline $\sqrt{3x-1}+(1+x)^2$
-
-Block
-$$ {1|3|all}
-\begin{aligned}
-\nabla \cdot \vec{E} &= \frac{\rho}{\varepsilon_0} \\
-\nabla \cdot \vec{B} &= 0 \\
-\nabla \times \vec{E} &= -\frac{\partial\vec{B}}{\partial t} \\
-\nabla \times \vec{B} &= \mu_0\vec{J} + \mu_0\varepsilon_0\frac{\partial\vec{E}}{\partial t}
-\end{aligned}
-$$
-
-[Learn more](https://sli.dev/features/latex)
-
----
-
-# Diagrams
-
-You can create diagrams / graphs from textual descriptions, directly in your Markdown.
-
-<div class="grid grid-cols-4 gap-5 pt-4 -mb-6">
-
-```mermaid {scale: 0.5, alt: 'A simple sequence diagram'}
-sequenceDiagram
-    Alice->John: Hello John, how are you?
-    Note over Alice,John: A typical interaction
-```
-
-```mermaid {theme: 'neutral', scale: 0.8}
-graph TD
-B[Text] --> C{Decision}
-C -->|One| D[Result 1]
-C -->|Two| E[Result 2]
-```
-
-```mermaid
-mindmap
-  root((mindmap))
-    Origins
-      Long history
-      ::icon(fa fa-book)
-      Popularisation
-        British popular psychology author Tony Buzan
-    Research
-      On effectiveness<br/>and features
-      On Automatic creation
-        Uses
-            Creative techniques
-            Strategic planning
-            Argument mapping
-    Tools
-      Pen and paper
-      Mermaid
-```
-
-```plantuml {scale: 0.7}
-@startuml
-
-package "Some Group" {
-  HTTP - [First Component]
-  [Another Component]
-}
-
-node "Other Groups" {
-  FTP - [Second Component]
-  [First Component] --> FTP
-}
-
-cloud {
-  [Example 1]
-}
-
-database "MySql" {
-  folder "This is my folder" {
-    [Folder 3]
-  }
-  frame "Foo" {
-    [Frame 4]
-  }
-}
-
-[Another Component] --> [Example 1]
-[Example 1] --> [Folder 3]
-[Folder 3] --> [Frame 4]
-
-@enduml
-```
-
-</div>
-
-Learn more: [Mermaid Diagrams](https://sli.dev/features/mermaid) and [PlantUML Diagrams](https://sli.dev/features/plantuml)
-
----
-dragPos:
-  square: 0,-432,0,0
----
-
-foo: bar
-dragPos:
-  square: 691,32,167,_,-16
-
----
-dragPos:
-  square: 0,-562,0,0
----
-
-# Draggable Elements
-
-Double-click on the draggable elements to edit their positions.
-
-<br>
-
-###### Directive Usage
-
-```md
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-```
-
-<br>
-
-###### Component Usage
-
-```md
-<v-drag text-3xl>
-  <carbon:arrow-up />
-  Use the `v-drag` component to have a draggable container!
-</v-drag>
-```
-
-<v-drag pos="663,206,261,_,-15"undefined>
-  <div text-center text-3xl border border-main rounded>
-    Double-click me!
-  </div>
-</v-drag>
-
-<img v-drag="'square'" src="https://sli.dev/logo.png">
-
-###### Draggable Arrow
-
-```md
-<v-drag-arrow two-way />
-```
-
-<v-drag-arrow pos="67,452,253,46" two-way op70 />
-
----
-
-src: ./pages/imported-slides.md
-hide: false
----
-
-
----
-
-# Monaco Editor
-
-Slidev provides built-in Monaco Editor support.
-
-Add `{monaco}` to the code block to turn it into an editor:
-
-```ts {monaco}
-import { ref } from 'vue'
-import { emptyArray } from './external'
-
-const arr = ref(emptyArray(10))
-```
-
-Use `{monaco-run}` to create an editor that can execute the code directly in the slide:
-
-```ts {monaco-run}
-import { version } from 'vue'
-import { emptyArray, sayHello } from './external'
-
-sayHello()
-console.log(`vue ${version}`)
-console.log(emptyArray<number>(10).reduce(fib => [...fib, fib.at(-1)! + fib.at(-2)!], [1, 1]))
-```
-
----
-
-layout: center
-class: text-center
----
-
-# Learn More
-
-[Documentation](https://sli.dev) · [GitHub](https://github.com/slidevjs/slidev) · [Showcases](https://sli.dev/resources/showcases)
-
-<PoweredBySlidev mt-10 />
+- importance
+- benefits
+- metrics - test coverage
