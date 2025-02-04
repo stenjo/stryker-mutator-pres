@@ -57,7 +57,7 @@ A tech geek spending his work and spare time figuring out stuff involving electr
 
 ---
 layout: image-right
-image: ./images/DORA-action.png
+image: /images/DORA-action.png
 backgroundSize: contain
 ---
 
@@ -86,7 +86,7 @@ repositories.
 
 ---
 layout: image-right
-image: ./images/LeadTimeTest.png
+image: /images/LeadTimeTest.png
 ---
 
 # LeadTime
@@ -321,7 +321,7 @@ A few takeaways:
 
 ---
 layout: image-right
-image: ./images/test-code.png
+image: /images/test-code.png
 ---
 
 # But Why?
@@ -353,7 +353,7 @@ How do I know?
 
 ---
 layout: image-left
-image: ./images/stryker-man.png
+image: /images/stryker-man.png
 ---
 
 # Stryker-mutator
@@ -374,7 +374,7 @@ Stryker is an automated way if testing your tests through altering your code by 
 
 <v-after>
 
-![Stryker results](./images/stryker-scores.png)
+![Stryker results](/images/stryker-scores.png)
 
 </v-after>
 
@@ -487,6 +487,7 @@ Stryker has ways to reduce time spent:
 
 ---
 layout: center
+
 ---
 
 # How to get high stryker score?
@@ -504,6 +505,7 @@ layout: center
 layout: image-right
 image: images/tdd-img.png
 backgroundSize: 20em
+
 ---
 
 # TDD
