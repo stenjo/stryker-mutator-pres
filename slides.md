@@ -32,7 +32,8 @@ The last comment block of each slide will be treated as slide notes. It will be 
 
 ---
 transition: fade-out
-background: -
+background: https://cover.sli.dev
+
 ---
 
 # Sten Johnsen:
@@ -136,6 +137,8 @@ Lets test our tests to see how waterthight our testing is by considering a few l
       this.log.push(`\nLog is filtered - only feat and fix.`)
     }
 ```
+
+<Arrow x1="10" y1="20" x2="100" y2="200" />
 
 ```ts {6}
 // bug 1
@@ -300,15 +303,19 @@ $$
 
 <br/>
 
-<v-clicks depth="2">
-
+<v-click>
 A few takeaways:
+</v-click>
 
-- Tests are not good enough
-- Tests are not useless
-- We can improve the test quality
+<v-clicks>
+
+- Test coverage alone is not good enough, although
+
+- Tests are not useless!
+
+- Test quality can be better, but also:
+
 - No test coverage = no tests at all
-
 </v-clicks>
 
 ---
@@ -400,6 +407,7 @@ layout: two-cols-header
 
 Apart from running Stryker from command line, there might also be a benefit from running stryker in a github action. <br/>
 
+
 ::left::
 
 ## Nightly
@@ -407,7 +415,10 @@ Apart from running Stryker from command line, there might also be a benefit from
 Implemented nightly Stryker test of all code-base,<br/>
 storing the report available to the team.
 
+<v-clicks>
+
 - Track total score over time
+
 - Use changes in total score as input to<br/>
   retrospectives
 
@@ -423,6 +434,8 @@ jobs:
 ...
 ```
 
+</v-clicks>
+
 ::right::
 
 ## Pull Requests
@@ -430,7 +443,10 @@ jobs:
 Run Stryker on changed code as part of the validation<br/>
 checks in pull-requests.
 
+<v-clicks>
+
 - Make it quick for immediate feedback to developers
+
 - Discuss within the team if there should be a minimum score
 
 ```yaml
@@ -450,6 +466,7 @@ on:
 jobs:
 ...
 ```
+</v-clicks>
 
 ---
 
@@ -483,7 +500,7 @@ layout: center
 ---
 layout: image-right
 image: images/tdd-img.png
-backgroundSize: contain
+backgroundSize: 20em
 ---
 
 # TDD
@@ -495,8 +512,9 @@ Some other benefits from TDD:
 - Better architecture
 - Tests are the documentation
 - Easy when debugging<br/>
+
 and as an extra benefit:
-- Fosters high test coverage
+- Guarantees test coverage and high stryker score
 
 </v-clicks>
 
