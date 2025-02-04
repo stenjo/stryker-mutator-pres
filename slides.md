@@ -80,7 +80,7 @@ repositories.
 
 <v-after>
 
-![test coverage](./images/test-coverage.png)
+![test coverage](/images/test-coverage.png)
 
 </v-after>
 
@@ -101,7 +101,7 @@ in `LeadTime.test.ts` test suite.
 - (probably too big)<br/>
 - 19 tests<br/>
 - Provides 100% test coverage<br/>
-![LeadTime test log](./images/LeadTime-test-log.png)
+![LeadTime test log](/images/LeadTime-test-log.png)
 
 </v-clicks>
 
