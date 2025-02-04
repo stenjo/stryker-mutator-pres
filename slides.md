@@ -549,11 +549,7 @@ Ran all test suites.
 
 
 ---
-layout: end
-image: <https://cover.sli.dev>
-
-
-# QUESTIONS?
+layout: full
 
 ---
 
