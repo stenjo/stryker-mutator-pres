@@ -31,28 +31,29 @@ The last comment block of each slide will be treated as slide notes. It will be 
 -->
 
 ---
-transition: fade-out
-background: https://cover.sli.dev
+layout: default
+transition: slide-up
 
 ---
 
-# Sten Johnsen:
+# Sten Johnsen
 
-A tech geek spending his work and spare time figuring out stuff on electronics and software
+A tech geek spending his work and spare time figuring out stuff involving electronics and software
 
-- **Bouvet** - Since 2008, currently team-lead and (full-stack)developer
+
+- **Bouvet** - Since 2008, currently team-lead and (full-stack) developer
+![Sten](./images/Sten_Johnsen_6879.JPG) {width=200px margin=30px align=right}
+
 - **Experience** - Graduated 1991 - B.Eng Microelectronic computer systems. Programming since my first real job - never looked back.
+  
 - **Roles** - Programmer, project manager, program manager, department head, entrepreneur, agile coach and relationship counsellor
+
 - **Trainer** - DevOps certification courses, Agile, Scrum
-- **Busy with** - Quality of software and trying to create high performing teams
 
-<br>
+- **Busy with** - Quality of software and creating high performing teams
 
-<br>
 
-<!--
-Here is another comment.
--->
+
 
 ---
 layout: image-right
@@ -394,7 +395,8 @@ Stryker is an automated way if testing your tests through altering your code by 
 
 ---
 layout: iframe
-url: https://stenjo.github.io/stryker-presentation/mutation.html
+url: (./mutation.html)
+
 ---
 
 # Stryker report
@@ -548,7 +550,7 @@ Ran all test suites.
 ---
 layout: end
 image: <https://cover.sli.dev>
----
+
 
 # QUESTIONS?
 
@@ -684,6 +686,7 @@ const author = {
 transition: slide-up
 level: 2
 hide: true
+
 ---
 
 # Testing software
