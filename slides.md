@@ -395,7 +395,7 @@ Stryker is an automated way if testing your tests through altering your code by 
 
 ---
 layout: iframe
-url: (./mutation.html)
+url: mutation.html
 
 ---
 
@@ -404,11 +404,12 @@ url: (./mutation.html)
 
 ---
 layout: two-cols-header
+
 ---
+
 # Practical use in other projects
 
 Apart from running Stryker from command line, there might also be a benefit from running stryker in a github action. <br/>
-
 
 ::left::
 
