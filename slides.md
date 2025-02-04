@@ -385,6 +385,7 @@ Stryker is an automated way if testing your tests through altering your code by 
 <v-clicks>
 
 - Filters the files to be mutated
+  
 - Determines what mutations to insert
 - Performs a dry-run of all tests to verify all is passing
 - Makes a copy of your code, applies one mutation and runs all tests
@@ -398,6 +399,7 @@ layout: iframe
 url: mutation.html
 
 ---
+
 
 # Stryker report
 
