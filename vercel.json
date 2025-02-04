@@ -3,5 +3,6 @@
     { "source": "/(.*)", "destination": "/index.html" }
   ],
   "buildCommand": "npm run build",
+  "assetsInclude": ["**/*.jpeg", "**/*.jpg", "**/*.png", "**/*.svg", "**/*.gif", "**/*.ico", "**/*.json", "**/*.xml", "**/*.webmanifest", "**/*.txt", "**/*.pdf", "**/*.css", "**/*.js", "**/*.woff", "**/*.woff2", "**/*.ttf", "**/*.eot", "**/*.otf"],
   "outputDirectory": "dist"
 }
