@@ -406,6 +406,7 @@ url: mutation.html
 
 ---
 layout: two-cols-header
+class: gap-x-12
 
 ---
 
@@ -423,9 +424,11 @@ storing the report available to the team.
 <v-clicks>
 
 - Track total score over time
-
 - Use changes in total score as input to<br/>
   retrospectives
+
+<div class="flex gap-12">
+  <div class="w-9/10">
 
 ```yaml
 name: Stryker mutation tests frontend
@@ -438,6 +441,8 @@ on:
 jobs:
 ...
 ```
+  </div>
+</div>
 
 </v-clicks>
 
@@ -451,7 +456,6 @@ checks in pull-requests.
 <v-clicks>
 
 - Make it quick for immediate feedback to developers
-
 - Discuss within the team if there should be a minimum score
 
 ```yaml
