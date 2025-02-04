@@ -42,7 +42,7 @@ A tech geek spending his work and spare time figuring out stuff involving electr
 
 
 - **Bouvet** - Since 2008, currently team-lead and (full-stack) developer
-![Sten](./images/Sten_Johnsen_6879.jpeg) {width=200px margin=30px align=right}
+![Sten](/images/Sten_Johnsen_6879.jpeg) {width=200px margin=30px align=right}
 
 - **Experience** - Graduated 1991 - B.Eng Microelectronic computer systems. Programming since my first real job - never looked back.
   
@@ -558,9 +558,26 @@ layout: full
 - Stryker Mutator (web): `https://stryker-mutator.io/`
 - Test-Driven Development: `https://docs.google.com/presentation/d/1L5yPzxBlDJ5r56OHpUv1BLO4pkxFYT9V1yLUgosThq4/edit?usp=sharing`
   
+![Book](/images/book-clipart-lg.png) {width=300px margin=30px}
+
+
 
 ---
-hide: true
+layout: fact
+
+---
+
+# Thank you!
+
+
+
+
+## ![Presentation](/images/QR.png) {width=150px margin=30px align=right}
+
+---
+layout: full
+hidden: true
+
 ---
 
 # What could go wrong?
