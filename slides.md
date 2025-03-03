@@ -56,11 +56,32 @@ A tech geek spending his work and spare time figuring out stuff involving electr
 
 
 ---
+layout: default
+transition: slide-up
+---
+
+
+# Erlend Lunde
+
+A geek who loves spending his spare time in front of a computer or immersed in a good fantasy book.
+
+- **Bouvet** - Joined in 2023 as a full-stack developer for Team Epilogue
+![Erlend](/images/Erlend_Lunde.jpg) {width=200px margin=30px align=right}
+
+- **Experience** - Graduated in winter 2022 with a Bachelor's degree in Digital Culture. Started at Bouvet fresh out of the classroom.
+  
+- **Roles** - Programmer, bug squasher
+
+- **Busy with** - Writing testable code, and writing tests
+
+
+
+
+---
 layout: image-right
 image: images/DORA-action.png
 backgroundSize: contain
 ---
-
 # devops-metrics-action
 
 <v-click>
@@ -358,7 +379,7 @@ image: images/stryker-man.png
 
 # Stryker-mutator
 
-Stryker is an automated way if testing your tests through altering your code by inserting bugs (mutants) and then running your tests to verify that the tests are catching the bugs or not.
+Stryker is an automated way of testing your tests through altering your code by inserting bugs (mutants) and then running your tests to verify that the tests are catching the bugs or not.
 
 <v-clicks>
 
@@ -393,16 +414,6 @@ Stryker is an automated way if testing your tests through altering your code by 
 - Creates a report based on all mutations
 
 </v-clicks>
-
----
-layout: iframe
-url: mutation.html
-
----
-
-
-# Stryker report
-
 
 ---
 layout: two-cols-header
@@ -484,6 +495,7 @@ jobs:
 Stryker, in its nature, runs your test suites for every mutation it decides is relevant. This means that for large codebases a full report takes a long time to complete.
 
 Stryker has ways to reduce time spent:
+<v-clicks>
 
 - Incremental mode: Only run mutations changed
 - Pre-check code for compilation or build errors
@@ -491,8 +503,53 @@ Stryker has ways to reduce time spent:
 - Ignores mutations in uncovered code
 - Run stryker on part of the code only (lines changed)
 
+</v-clicks>
 ---
-layout: center
+layout: two-cols
+---
+
+# Our Experience
+### Report on pull request
+![GitReport](/images/Report_from_git.png) {width=430px margin=30px align=left style="filter: brightness(150%);"}
+
+#### Get feedback on test quality where you are working 
+::right::
+
+<br>
+
+<v-clicks>
+
+## What do we do with this information?
+
+<v-click>
+
+- **Drop everything to improve score?** No
+</v-click>
+<v-click>
+
+- **Act on feedback from new tests**: How good are the new tests?
+</v-click>
+<v-click>
+
+- **Get information**: How good are the test testing things touched by your new fancy experimental feature?
+</v-click>
+<v-click>
+
+- **Challenges Faced**: As with any theology added to a project it must be maintained
+</v-click>
+<v-click>
+
+- **What we get**: A well of information about our tests from little effort (once stryker is set up)
+</v-click>
+
+</v-clicks>
+
+
+---
+layout: default
+---
+
+<iframe src="mutation.html" style="zoom: 0.5; width: 125%; height: 125%; border: none;"></iframe>
 
 ---
 
