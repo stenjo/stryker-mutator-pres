@@ -495,6 +495,7 @@ jobs:
 Stryker, in its nature, runs your test suites for every mutation it decides is relevant. This means that for large codebases a full report takes a long time to complete.
 
 Stryker has ways to reduce time spent:
+<v-clicks>
 
 - Incremental mode: Only run mutations changed
 - Pre-check code for compilation or build errors
@@ -502,6 +503,7 @@ Stryker has ways to reduce time spent:
 - Ignores mutations in uncovered code
 - Run stryker on part of the code only (lines changed)
 
+</v-clicks>
 ---
 layout: two-cols
 ---
@@ -544,13 +546,10 @@ layout: two-cols
 
 
 ---
-layout: iframe
-url: mutation.html
-
+layout: default
 ---
 
-
-# Stryker HTML report
+<iframe src="mutation.html" style="zoom: 0.5; width: 125%; height: 125%; border: none;"></iframe>
 
 ---
 
