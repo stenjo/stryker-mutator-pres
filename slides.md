@@ -33,7 +33,6 @@ The last comment block of each slide will be treated as slide notes. It will be 
 ---
 layout: default
 transition: slide-up
-
 ---
 
 # Sten Johnsen
@@ -52,8 +51,12 @@ A tech geek spending his work and spare time figuring out stuff involving electr
 
 - **Busy with** - Quality of software and creating high performing teams
 
-
-
+<!--
+15+ years in Bouvet, 
+Full stack developer, 
+teamlead and 
+DevOps trainer
+-->
 
 ---
 layout: default
@@ -82,6 +85,7 @@ layout: image-right
 image: images/DORA-action.png
 backgroundSize: contain
 ---
+
 # devops-metrics-action
 
 <v-click>
@@ -104,6 +108,17 @@ repositories.
 ![test coverage](/images/test-coverage.png)
 
 </v-after>
+
+<!--
+Consider this GitHub action - a plugin for calculating DORA metrics based on the issues, releases and commits to one or more repositories
+
+Is entirely coded in Typescript
+100% test coverage. Not only on 
+- lines, but also 
+- statements, 
+- functons and 
+- branches
+-->
 
 ---
 layout: image-right
@@ -133,7 +148,15 @@ How do we know these tests are good?<br/>
 
 </v-click>
 
+<!--
+The leadTime module calculates the Lead time for changes by the team. Time is an average for changes over the last two months, calculated as the time between the first commit on the issue until the change is in production.
 
+The LeadTime module has automated tests implemented in LeadTime.test.ts
+
+As like the overall program, this test suite also provide 100% test coverage.
+
+But are we sure the tests are reliable and will let us know if we later on introduce bugs in the code?
+-->
 
 ---
 
@@ -308,6 +331,24 @@ Lets test our tests to see how waterthight our testing is by considering a few l
 
 </v-click>
 
+<!--
+Let's analyze a small part of the code of the module production code to see if we can introduce bugs that our tests does not detect.
+
+This is a small fraction of the production code,
+
+Lets consider only 5-6 lines of the code and start introduce changes.
+
+- The whole if condition might be inadvertently evaluate to false always
+- The first half of the condition might be false
+- Behaviour might change to AND from OR
+- The last half might be false
+- The whole block might be removed
+- The second if condition might be set to true
+- or to false
+- or the whole block might be removed.
+
+All of these changes are not caught by any of the tests covering the code.
+-->
 
 ---
 
@@ -340,6 +381,10 @@ A few takeaways:
 - No test coverage = no tests at all
 </v-clicks>
 
+<!--
+Turns out that there are 4 changes that was detected by our tests - that we did not cover now.
+-->
+
 ---
 layout: image-right
 image: images/test-code.png
@@ -371,6 +416,19 @@ Doing this exercise enables us to:
 BTW: The overall score for the LeadTime module tests is 67%. <br/><br/>
 How do I know?
 </v-click>
+
+<!--
+So, why should we do this exercise?
+
+We can detect functionality we have not yet good test for. 
+(typically a symptom of writing tests when the production code is already done)
+
+There might be parts of the code we really don't need if everything works in spite of inserted changes.
+
+Point to areas where we might improve the tests
+
+Increase the robustness of the code by improving tests so that we feel safer when changing it later
+-->
 
 ---
 layout: image-left
