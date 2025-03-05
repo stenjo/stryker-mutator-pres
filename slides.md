@@ -666,7 +666,7 @@ image: images/judge.jpg
 ---
 layout: image-right
 image: images/tdd-img.png
-backgroundSize: 20em
+backgroundSize: 30em
 ---
 
 # TDD
