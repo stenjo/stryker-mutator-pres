@@ -82,7 +82,7 @@ A geek who loves spending his spare time in front of a computer or immersed in a
 
 ---
 layout: image-right
-image: public/images/DORA-action.png
+image: /images/DORA-action.png
 backgroundSize: contain
 ---
 
@@ -110,15 +110,16 @@ repositories.
 </v-after>
 
 <!--
-Consider this GitHub action - a plugin for calculating DORA metrics based on the issues, releases and commits to one or more repositories
+[click] Consider this GitHub action - a plugin for calculating DORA metrics based on the issues, releases and commits to one or more repositories
 
 [click] Is entirely coded in Typescript
-100% test coverage. Not only on 
 
-[click] - lines, but also 
-[click] - statements, 
-[click] - functons and
-[click] - branches
+[click] 100% test coverage. Not only on 
+
+- lines, but also 
+- statements, 
+- functons and
+- branches
 -->
 
 ---
@@ -152,11 +153,14 @@ How do we know these tests are good?<br/>
 <!--
 The leadTime module calculates the Lead time for changes by the team. Time is an average for changes over the last two months, calculated as the time between the first commit on the issue until the change is in production.
 
-The LeadTime module has automated tests implemented in LeadTime.test.ts
+[click] The LeadTime module has automated tests implemented in LeadTime.test.ts - a file with more than 740 lines of code.
 
-As like the overall program, this test suite also provide 100% test coverage.
+[click] Probably too big
+[click] but contains 19 tests altogether
 
-But are we sure the tests are reliable and will let us know if we later on introduce bugs in the code?
+[click] As the overall program, this test suite also provide 100% test coverage.
+
+[click] But are we sure the tests are reliable and will let us know if we later on introduce bugs in the code?
 -->
 
 ---
@@ -169,7 +173,7 @@ Lets test our tests to see how waterthight our testing is by considering a few l
 <v-click>
 
 ````md magic-move {lines: true}
-```ts {*|6-10}{lines:true,startLine:2}
+```ts {*|6-11}{lines:true,startLine:2}
 // code
   getLog(): string[] {
     return this.log
@@ -335,20 +339,32 @@ Lets test our tests to see how waterthight our testing is by considering a few l
 <!--
 Let's analyze a small part of the code of the module production code to see if we can introduce bugs that our tests does not detect.
 
-[click] This is a small fraction of the production code,
+[click] This is a small fraction of the production code, in this particular file
 
-[click] Lets consider only 5-6 lines of the code and start introduce changes.
+[click] Lets consider only 6 lines of the code and start introduce changes.
 
 [click] - The whole if condition might be inadvertently evaluate to false always
+
 [click] - The first half of the condition might be false
+
 [click] - Behaviour might change to AND from OR
+
 [click] - The last half might be false
+
 [click] - The whole block might be removed
+
 [click] - The second if condition might be set to true
+
 [click] - or to false
+
 [click] - or the whole block might be removed.
 
-All of these changes are not caught by any of the tests covering the code.
+[click] None of these changes are caught by any of the tests covering the code.
+
+[click] As a matter of fact, we are able to find 8 possible bugs in these few lines of code
+
+[click] So obviously, even with 100% test coverage, we do not have the absolute top code quality or robustness against future changes
+
 -->
 
 ---
@@ -383,7 +399,17 @@ A few takeaways:
 </v-clicks>
 
 <!--
+Test quality can be quantified as a percentage of changes found upon changes tested
+
 Turns out that there are 4 changes that was detected by our tests - that we did not cover now.
+
+[click] What we have learned:
+
+[click] - although test coverage is good, coverage alone does not guarantee that all future or present bugs will be detected by our tests.
+
+[click] [click] - There is always room for better tests
+
+[click] - But let's not forget that without test coverage, we have no quality assurance at all, and we don't know what our code works for all relevant situations.
 -->
 
 ---
@@ -420,6 +446,7 @@ How do I know?
 
 <!--
 So, why should we do this exercise?
+[click]
 
 [click] We can detect functionality we have not yet good test for. 
 (typically a symptom of writing tests when the production code is already done)
@@ -625,7 +652,7 @@ layout: default
 
 ---
 layout: image-right
-image: images/tdd-img.png
+image: /images/tdd-img.png
 backgroundSize: 20em
 
 ---
@@ -696,213 +723,6 @@ layout: fact
 
 
 
-## ![Presentation](/images/QR.png) {width=150px margin=30px align=right}
-
----
-layout: full
-hidden: true
-
----
-
-# What could go wrong?
-    
-    line 3: Covered by 18 tests<br/>
-    line 4: Covered by 6 tests<br/>
-     
-````md magic-move {lines: true}
-```ts {*|3|*}
-// code
-  async getLeadTime(filtered = false): Promise<number> {
-    if (this.pulls.length === 0 || this.releases.length === 0) {
-      return 0
-    }
-```
-
-```ts {*|3|*}
-// bug 1
-  async getLeadTime(filtered = false): Promise<number> {
-    if (this.pulls.length === 0 && this.releases.length === 0) {
-      return 0
-    }
-```
-
-```ts {*|3|*}
-// bug 2
-  async getLeadTime(filtered = false): Promise<number> {
-    if (false || this.releases.length === 0) {
-      return 0
-    }
-```
-
-```ts {*|3|*}
-// bug 3
-  async getLeadTime(filtered = false): Promise<number> {
-    if (this.pulls.length === 0 || true === 0) {
-      return 0
-    }
-```
-
-```ts {*|3|*}
-// bug 4
-  async getLeadTime(filtered = false): Promise<number> {
-    if (this.pulls.length === 0 || this.releases.length === 0) {}
-```
-
-````
-
----
-hide: true
----
+## ![Presentation](/images/stryker-pres-qr.png) {width=200px margin=30px align=right}
 
 
-````md magic-move {lines: true}
-```ts {*|2|*}
-// step 1
-const author = reactive({
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-})
-```
-
-```ts {*|1-2|3-4|3-4,8}
-// step 2
-export default {
-  data() {
-    return {
-      author: {
-        name: 'John Doe',
-        books: [
-          'Vue 2 - Advanced Guide',
-          'Vue 3 - Basic Guide',
-          'Vue 4 - The Mystery'
-        ]
-      }
-    }
-  }
-}
-```
-
-```ts
-// step 3
-export default {
-  data: () => ({
-    author: {
-      name: 'John Doe',
-      books: [
-        'Vue 2 - Advanced Guide',
-        'Vue 3 - Basic Guide',
-        'Vue 4 - The Mystery'
-      ]
-    }
-  })
-}
-```
-
-Non-code blocks are ignored.
-
-```vue
-<!-- step 4 -->
-<script setup>
-const author = {
-  name: 'John Doe',
-  books: [
-    'Vue 2 - Advanced Guide',
-    'Vue 3 - Basic Guide',
-    'Vue 4 - The Mystery'
-  ]
-}
-</script>
-```
-````
-
-
----
-transition: slide-up
-level: 2
-hide: true
-
----
-
-# Testing software
-
-How do we know our stuff works?
-Automated tests
-
-- importance
-- benefits
-- metrics - test coverage
-- Component/Unit tests
-- Regression tests
-- User Acceptance tests
-- End-to-end test
-
----
-hide: true
----
-
-# Test quality
-
-How do we know our tests are good?
-
-
-
----
-hide: true
----
-
-# Implementing in project/product development
-
-- Using locally 
-- In pull-requests
-- For review
-- As a quality check
-
-
-
----
-hide: true
----
-
-<!--
-You can have `style` tag in markdown to override the style for the current page.
-Learn more: https://sli.dev/features/slide-scope-style
--->
-
-<style>
-h1 {
-  background-color: #2B90B6;
-  background-image: linear-gradient(45deg, #4EC5D4 10%, #146b8c 20%);
-  background-size: 100%;
-  -webkit-background-clip: text;
-  -moz-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -moz-text-fill-color: transparent;
-}
-</style>
-
-<!--
-Here is another comment.
--->
-
----
-transition: slide-up
-level: 2
-hide: true
----
-
----
-hide: true
----
-
-# Testing software
-
-How do we know our stuff works?
-Automated tests
-
-- importance
-- benefits
-- metrics - test coverage
