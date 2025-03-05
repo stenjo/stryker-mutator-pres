@@ -82,7 +82,7 @@ A geek who loves spending his spare time in front of a computer or immersed in a
 
 ---
 layout: image-right
-image: images/DORA-action.png
+image: /images/DORA-action.png
 backgroundSize: contain
 ---
 
@@ -112,17 +112,19 @@ repositories.
 <!--
 Consider this GitHub action - a plugin for calculating DORA metrics based on the issues, releases and commits to one or more repositories
 
-Is entirely coded in Typescript
+[click] Is entirely coded in Typescript
 100% test coverage. Not only on 
-- lines, but also 
-- statements, 
-- functons and 
-- branches
+
+- lines, but also [click] 
+- statements, [click] 
+- functons and [click] 
+- branches [click] 
+
 -->
 
 ---
 layout: image-right
-image: images/LeadTimeTest.png
+image: /images/LeadTimeTest.png
 ---
 
 # LeadTime
