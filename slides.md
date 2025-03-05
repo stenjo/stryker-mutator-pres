@@ -82,7 +82,7 @@ A geek who loves spending his spare time in front of a computer or immersed in a
 
 ---
 layout: image-right
-image: /images/DORA-action.png
+image: images/DORA-action.png
 backgroundSize: contain
 ---
 
