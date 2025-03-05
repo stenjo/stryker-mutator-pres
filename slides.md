@@ -115,16 +115,15 @@ Consider this GitHub action - a plugin for calculating DORA metrics based on the
 [click] Is entirely coded in Typescript
 100% test coverage. Not only on 
 
-- lines, but also [click] 
-- statements, [click] 
-- functons and [click] 
-- branches [click] 
-
+[click] - lines, but also 
+[click] - statements, 
+[click] - functons and
+[click] - branches
 -->
 
 ---
 layout: image-right
-image: public/images/LeadTimeTest.png
+image: /images/LeadTimeTest.png
 ---
 
 # LeadTime
@@ -389,7 +388,7 @@ Turns out that there are 4 changes that was detected by our tests - that we did 
 
 ---
 layout: image-right
-image: images/test-code.png
+image: /images/test-code.png
 ---
 
 # But Why?
@@ -422,19 +421,19 @@ How do I know?
 <!--
 So, why should we do this exercise?
 
-We can detect functionality we have not yet good test for. 
+[click] We can detect functionality we have not yet good test for. 
 (typically a symptom of writing tests when the production code is already done)
 
-There might be parts of the code we really don't need if everything works in spite of inserted changes.
+[click] There might be parts of the code we really don't need if everything works in spite of inserted changes.
 
-Point to areas where we might improve the tests
+[click] Point to areas where we might improve the tests
 
-Increase the robustness of the code by improving tests so that we feel safer when changing it later
+[click] Increase the robustness of the code by improving tests so that we feel safer when changing it later
 -->
 
 ---
 layout: image-left
-image: images/stryker-man.png
+image: /images/stryker-man.png
 ---
 
 # Stryker-mutator
