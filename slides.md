@@ -82,7 +82,7 @@ A geek who loves spending his spare time in front of a computer or immersed in a
 
 ---
 layout: image-right
-image: /images/DORA-action.png
+image: public/images/DORA-action.png
 backgroundSize: contain
 ---
 
@@ -124,7 +124,7 @@ Consider this GitHub action - a plugin for calculating DORA metrics based on the
 
 ---
 layout: image-right
-image: /images/LeadTimeTest.png
+image: public/images/LeadTimeTest.png
 ---
 
 # LeadTime
@@ -336,18 +336,18 @@ Lets test our tests to see how waterthight our testing is by considering a few l
 <!--
 Let's analyze a small part of the code of the module production code to see if we can introduce bugs that our tests does not detect.
 
-This is a small fraction of the production code,
+[click] This is a small fraction of the production code,
 
-Lets consider only 5-6 lines of the code and start introduce changes.
+[click] Lets consider only 5-6 lines of the code and start introduce changes.
 
-- The whole if condition might be inadvertently evaluate to false always
-- The first half of the condition might be false
-- Behaviour might change to AND from OR
-- The last half might be false
-- The whole block might be removed
-- The second if condition might be set to true
-- or to false
-- or the whole block might be removed.
+[click] - The whole if condition might be inadvertently evaluate to false always
+[click] - The first half of the condition might be false
+[click] - Behaviour might change to AND from OR
+[click] - The last half might be false
+[click] - The whole block might be removed
+[click] - The second if condition might be set to true
+[click] - or to false
+[click] - or the whole block might be removed.
 
 All of these changes are not caught by any of the tests covering the code.
 -->
