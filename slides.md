@@ -484,10 +484,12 @@ Stryker is an automated way of testing your tests through altering your code by 
 ![Stryker results](/images/stryker-scores.png)
 
 </v-after>
-
+---
+layout: default
 ---
 
 # How Stryker Works
+  <img src="/images/monkeyTest.avif" alt="Monkey Test" style="float: right; height: 250px; margin-left: 20px;"/>
 
 <v-clicks>
 
@@ -637,7 +639,9 @@ layout: default
 <iframe src="mutation.html" style="zoom: 0.5; width: 125%; height: 125%; border: none;"></iframe>
 
 ---
-
+layout: image-right
+image: images/judge.jpg
+---
 # How to get high stryker score?
 
 <v-clicks>
