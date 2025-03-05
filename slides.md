@@ -495,7 +495,7 @@ Stryker is an automated way of testing your tests through altering your code by 
   
 - Determines what mutations to insert
 - Performs a dry-run of all tests to verify all is passing
-- Makes a copy of your code, applies one mutation and runs all tests
+- Makes a copy of your code, applies one mutation and runs all relevant tests
 - Counts the status of the tests for each mutation
 - Creates a report based on all mutations
 
@@ -621,7 +621,7 @@ layout: two-cols
 </v-click>
 <v-click>
 
-- **Challenges Faced**: As with any theology added to a project it must be maintained
+- **Challenges Faced**: As with any technology added to a project it must be maintained
 </v-click>
 <v-click>
 
@@ -629,7 +629,6 @@ layout: two-cols
 </v-click>
 
 </v-clicks>
-
 
 ---
 layout: default
@@ -650,11 +649,20 @@ layout: default
 
 </v-clicks>
 
+<!--
+[click] A culture of Quality First means we start off with quality. Some times known as shift-left testing.
+
+[click] Make sure we fail fast when we fail! The closer in time from creating the bug to actually know about it, the faster and easier (and cheaper) we can fix it.
+
+[click] Stryker Score is a feedback on your tests. Use it as a source of discussion or in retrospectives.
+
+[click] Test Driven Development is a well known and efficient way of getting to Quality First.
+-->
+
 ---
 layout: image-right
 image: /images/tdd-img.png
 backgroundSize: 20em
-
 ---
 
 # TDD
@@ -666,7 +674,6 @@ Some other benefits from TDD:
 - Better architecture
 - Tests are the documentation
 - Easy when debugging<br/>
-
 and as an extra benefit:
 - Guarantees test coverage and high stryker score
 
@@ -698,6 +705,17 @@ Ran all test suites.
 
 </v-after>
 
+<!--
+And by the way - TDD has other benefits too:
+
+[click] - Reliable and trustworthy code. We can feel safe that a change done does not break functionality somewhere else without the tests letting us know.
+
+[click] - Architecture of the application is automatically better structured and always a good fit for testing
+
+[click] - Tests tells us how the production code is intended to work, and therefore is good documentation.´Production code alone is never documentation of anything else than how the code works now. 
+
+[click] - Good tests are very easy to use when debugging and can be targeted to very narrow areas.
+-->
 
 ---
 layout: full
@@ -724,5 +742,3 @@ layout: fact
 
 
 ## ![Presentation](/images/stryker-pres-qr.png) {width=200px margin=30px align=right}
-
-
