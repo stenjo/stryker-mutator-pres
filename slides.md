@@ -124,7 +124,7 @@ repositories.
 
 ---
 layout: image-right
-image: /images/LeadTimeTest.png
+image: images/LeadTimeTest.png
 ---
 
 # LeadTime
@@ -414,7 +414,7 @@ Turns out that there are 4 changes that was detected by our tests - that we did 
 
 ---
 layout: image-right
-image: /images/test-code.png
+image: images/test-code.png
 ---
 
 # But Why?
@@ -460,7 +460,7 @@ So, why should we do this exercise?
 
 ---
 layout: image-left
-image: /images/stryker-man.png
+image: images/stryker-man.png
 ---
 
 # Stryker-mutator
@@ -661,7 +661,7 @@ layout: default
 
 ---
 layout: image-right
-image: /images/tdd-img.png
+image: images/tdd-img.png
 backgroundSize: 20em
 ---
 
